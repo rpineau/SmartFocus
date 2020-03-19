@@ -54,7 +54,7 @@ CSmartFocus::CSmartFocus()
     ltime = time(NULL);
     timestamp = asctime(localtime(&ltime));
     timestamp[strlen(timestamp) - 1] = 0;
-    fprintf(Logfile, "[%s] [SmartFocus::SmartFocus] version %.3f build 2020_03_19_1115.\n", timestamp, DRIVER_VERSION);
+    fprintf(Logfile, "[%s] [SmartFocus::SmartFocus] version %.3f build 2020_03_19_1445.\n", timestamp, DRIVER_VERSION);
     fprintf(Logfile, "[%s] SmartFocus Constructor Called\n", timestamp);
     fflush(Logfile);
 #endif
