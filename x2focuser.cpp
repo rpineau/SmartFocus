@@ -201,15 +201,17 @@ int	X2Focuser::execModalSettingsDialog(void)
 
     X2MutexLocker ml(GetMutex());
 	// set controls values
+    dx->setEnabled("posLimit", true);
     if(m_bLinked) {
         dx->setEnabled("pushButton", true);
-        dx->setEnabled("posLimit", true);
     }
     else {
         // disable all controls
         dx->setEnabled("pushButton", false);
-        dx->setEnabled("posLimit", false);
     }
+
+    nPosLimit = m_SmartFocusController.getPosLimit();
+    dx->setPropertyInt("posLimit", "value", nPosLimit);
 
     //Display the user interface
     mUiEnabled = true;
